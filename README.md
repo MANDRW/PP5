@@ -1,1 +1,2 @@
-# PP5
+# Praktyka programowania lab5
+CI/CD
