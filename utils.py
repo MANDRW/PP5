@@ -21,3 +21,14 @@ def divide(a: int, b: int) -> float:
     if b == 0:
         raise ValueError("Cannot divide by zero.")
     return a / b
+
+
+def binary_convert(num: int) -> str:
+    """Convert an integer to its binary representation."""
+    if not isinstance(num, int):
+        return "Only integers are allowed"
+    if num < 0:
+        return "Negative numbers are not allowed"
+    if num > 100:
+        return "Number too large"
+    return bin(num)[2:]

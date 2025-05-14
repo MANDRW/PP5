@@ -34,3 +34,23 @@ def test_divide_by_zero(a, b, expected):
     with pytest.raises(ValueError) as excinfo:
         utils.divide(a, b)
     assert str(excinfo.value) == expected
+
+
+@pytest.mark.parametrize("a, expected", [(0, 0), (4, 100), (64, 1000000)])
+def good_binary_convert(a, expected):
+    assert utils.binary_convert(a) == expected
+
+
+@pytest.mark.parametrize(
+    "a, expected", [(-1, "Negative numbers are not allowed"), (101, "Number too large")]
+)
+def bad_binary_convert(a, expected):
+    assert utils.binary_convert(a) == expected
+
+
+@pytest.mark.parametrize(
+    "a, expected",
+    [(2.5, "Only integers are allowed"), (3.14, "Only integers are allowed")],
+)
+def float_binary_convert(a, expected):
+    assert utils.binary_convert(a) == expected
