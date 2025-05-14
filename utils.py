@@ -22,6 +22,7 @@ def divide(a: int, b: int) -> float:
         raise ValueError("Cannot divide by zero.")
     return a / b
 
+
 def binary_convert(num: int) -> str:
     """Convert an integer to its binary representation."""
     if not isinstance(num, int):
