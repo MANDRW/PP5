@@ -46,4 +46,3 @@ def bad_binary_convert(a, expected):
 @pytest.mark.parametrize("a, expected", [(2.5, "Only integers are allowed"), (3.14, "Only integers are allowed")])
 def float_binary_convert(a, expected):
     assert utils.binary_convert(a) == expected
-
